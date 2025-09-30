@@ -1,0 +1,205 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+header{
+    width: 100vw;
+    height: 20vh;
+    box-shadow: 600px;
+    border-color:rgb(243, 240, 240) ;
+    background-color: #1a1a40;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    gap: 40px;
+}
+.nav h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+ 
+.child1{
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+.grand1{
+    width: 100vw;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 8px;
+
+} */
+.grand1{
+     width: 20vw;
+    height: 20vh;
+    
+
+    
+}
+img{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    row-gap: 20px;
+    justify-content: center;
+    grid-auto-rows: 10px;
+    margin-top: 14px; 
+    border-radius: 15px;
+    border-bottom: 15px;
+    align-items: center;
+    margin-left: 45px;
+    background-color: bisque;
+}
+.grand2{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: max-content;
+    justify-content: space-around;
+    padding: 6px;
+    /* gap: 1px; */
+
+}
+.price, .price2{
+    display: flex;
+    width: 300px;
+    height: 30px;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: content-box;
+    box-shadow: 300px;
+    border-radius: 5px;
+    background-color:rgb(111, 66, 233) ;
+
+}
+.tom{
+    box-sizing: border-box;
+    border-bottom: 20px;
+    box-shadow: 200px;
+    border-radius: 10px;
+    line-height: 40px;
+    column-gap: 20px;
+     background-color: rgb(5, 173, 202);
+    transition: transform 0.3s ease;
+}
+.tom:hover{
+    transform: translateY(-5px);
+    background-color: black;
+    color: rgb(199, 199, 211);
+}
+.product{
+    width: 100vw;
+    height:85vh;
+    align-items: center;
+    background-color:(180deg, rgb(8, 91, 201), rgba(123, 111, 235, 0.01));
+   
+}
+h1{
+    color: aliceblue;
+}
+h2{
+    color: azure;
+}
+.action{
+    align-items: center;
+    width: 100vw;
+    display: flex;
+}
+input{
+    width:300px;
+    height: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    box-shadow: 300px;
+    margin-left:500px;
+    text-align: center;
+
+}
+.product h2{
+    width:50% ;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color:rgba(7, 7, 7, 0.5);
+    margin: 18px;
+    margin-left: 500px;
+}
+textarea{
+    width: 300px;
+    height: 300px;
+    box-shadow: 300px black;
+    margin-left: 500px;
+    border-bottom: 200px;
+    border-radius: 20px;
+    background-color: azure;
+    color: #555;
+    text-align: center;
+
+}
+input:hover{
+    background-color: rgb(27, 26, 26);
+    color: beige;
+}
+textarea:hover{
+    background-color: black;
+    color: aliceblue;
+}
+.ink{
+    width:150px;
+    height: 50px;
+    border-radius: 15px;
+    border-width: 3px;
+    text-transform: uppercase;
+    margin-left: 570px;
+    transition: transform 1s ease;
+}
+.ink:hover{
+    scroll-behavior: smooth;
+    background-color: rgb(6, 6, 83);
+    transform: perspective(10px);
+    color: aliceblue;
+}
+footer{
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(3, 3, 46);
+    height: 5vh;
+    color: aliceblue;
+    font-size: 20px;
+}
+footer p{
+    margin-bottom: 9px;
+}
+.i{
+   margin-top: 10px;
+   color: black;
+}
+.nav-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      padding-top: 10px;
+      line-height: 50px;
+}
+.nav{
+    font-size: 1.5rem;
+    font-weight:bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    flex-wrap:wrap ;
+}
+body{
+    
+     background: linear-gradient(180deg, rgb(8, 91, 201), rgba(123, 111, 235, 0.01))
+}

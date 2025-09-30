@@ -1,0 +1,187 @@
+:root{
+    --bg:#000;
+    --matrix:#0f0;
+    --panel-bg:rgba(0,0,0,0.6);
+    --glass:rgba(255,255,0.03);
+    --accent: #00ff99;
+    --mono:"courier new", courier,monospace;
+}
+html, body{
+    height: 100%;
+    margin: 0;
+    background: radial-gradient(ellipse at 20% 10%, rgba(0,255,120,0.03) 0%, transparent 20%), 
+    linear-gradient(180deg,#000 0% , #020202 60%);
+    font-family: var(--mono);
+    color: var(--matrix);
+    overflow: hidden;
+}
+.matrix{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.06) 0, transparent 40%0) ;
+    mix-blend-mode: screen;
+}
+.matrix::before{
+    content:"";
+    position: absolute; inset: 0;
+    background-image:url('data:image/svg+xml;utf8,\\<svg xmlns="http://www.w3.org/2000/svg"width="100"');
+    background-size:150px 150px ;
+    opacity: 0.65;
+    animation: drift 7s linear infinite; 
+    filter: blur(.3px) contrast(120%); 
+    
+}
+@keyframes drift {
+    from {
+        transform:translateY(-10%)
+       rotate(0.001deg);}
+    to{
+        transform: translateY(10%) rotate(0.001deg);
+    }
+}
+.panel{
+    position: relative;
+    width: min(920px, 93%);
+    max-width: 1100px;
+    margin: 6vh auto;
+    background: linear-gradient(180deg, rgba(255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    padding: 28px;
+    backdrop-filter: blur(6px) saturate(120%);
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+    min-height: 350px;
+}
+.terminal{
+  background: linear-gradient(180deg), rgba(0,0,0,0.55), rgba(0,0,0,0.42);
+  border-radius:8px ; 
+  padding: 18px; 
+  box-shadow: inset 0 1px 0 rgba(255,255,0.02);
+  overflow: hidden;
+  position: relative;
+}
+.titlebar{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.dot{
+    width:12px;height: 12px;border-radius: 50%; opacity:.9
+}
+.dot.red{
+    background: rgba(255,85,0.95);
+    box-shadow: 0 0 8px rgba(255,60,60,0.12);
+}
+.dot.yellow{
+    background: rgba(255,200,80,0.9);
+}
+.dot.green{
+    background: rgba(0,220,120,0.95);
+}
+.screen{
+    color: var(--matrix);
+    font-size: 15px;
+    line-height: 1.45px;
+    white-space: pre-wrap;
+    font-family: var(--mono);
+    letter-spacing: 0.6px;
+    height: calc(100% - 42px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.line{
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.type-1{
+    width: 0ch;
+    animation: tyoing2 6s steps(120,end) 2.2s forwards;
+}
+.cursor{
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background: var(--matrix);
+    margin-left: 6px;
+    vertical-align: middle;
+    animation: blink 1s steps(2, start) infinite;
+    transform-origin: center;
+    border-radius: 2px;
+}
+@keyframes blink{
+    50%{
+        opacity: 0; transform: scaleX(.95);
+    }
+}
+@keyframes typing-1{
+    from{width: 0ch;}
+    to{width: 80ch;}
+}
+@keyframes typing-2{
+    from{width: 0ch;}
+    to{width: 80ch;}
+}
+.side{
+    background: linear-gradient(180deg  rgba(0,0,0,0.5), rgba(0,0,0,0.35));
+    border-radius: 8px;
+    padding: 14px;
+    border: 1px solid  rgba(0,220,150,0.04);
+    height: 100%;
+}
+.stat{
+    font-size: 13px;
+    color: rgba(0,255,150,0.9);
+    margin-bottom: 14px;
+
+}
+.stat strong{
+    display: block;
+    font-size: 22px;
+    color: var(--accent);
+    margin-top: 6px;
+}
+.ticker{
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0;
+    padding: 8px 18px;
+    font-size: 12px;
+    color: rgba(0,255,150,0.8);
+    border-top: 1px dashed rgba(0,220,150,0.04);
+    background: linear-gradient(180deg,rgba(0,0,0,0.02, ) rgba(0,0,0,0.06));
+    display: flex;
+    gap: 14px;
+    overflow: hidden;
+}
+.ticker-track{
+    display: inline-block;
+    will-change: transform;
+    white-space: nowrap;
+    animation: ticker 18s linear infinite;
+}
+@keyframes ticker{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-40%);
+    }
+}
+@media(max-width:900px){
+    .panel{
+        grid-template-columns: 1fr;
+        padding: 18px;
+        gap: 12px;
+        .side{order:2}
+    }
+}
+
